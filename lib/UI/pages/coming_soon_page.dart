@@ -1,4 +1,4 @@
-import 'package:clean_flutter_movies/json/coming_soon_json.dart';
+import 'package:clean_flutter_movies/UI/pages/json/coming_soon_json.dart';
 import 'package:flutter/material.dart';
 
 class ComingSoonPage extends StatefulWidget {

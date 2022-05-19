@@ -1,4 +1,4 @@
-import 'package:clean_flutter_movies/pages/root_app.dart';
+import 'package:clean_flutter_movies/UI/pages/root_app.dart';
 import 'package:flutter/material.dart';
 
 void main() {

@@ -1,4 +1,4 @@
-import 'package:clean_flutter_movies/json/video_detail_json.dart';
+import 'package:clean_flutter_movies/UI/pages/json/video_detail_json.dart';
 import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
 

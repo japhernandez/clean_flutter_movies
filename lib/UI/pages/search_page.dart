@@ -1,7 +1,8 @@
-import 'package:clean_flutter_movies/pages/video_detail_page.dart';
+import 'package:clean_flutter_movies/UI/pages/video_detail_page.dart';
 import 'package:flutter/material.dart';
 
-import '../json/search_json.dart';
+import 'json/search_json.dart';
+
 
 class SearchPage extends StatefulWidget {
   const SearchPage({Key? key}) : super(key: key);

@@ -1,5 +1,5 @@
-import 'package:clean_flutter_movies/json/home_json.dart';
-import 'package:clean_flutter_movies/pages/video_detail_page.dart';
+import 'package:clean_flutter_movies/UI/pages/json/home_json.dart';
+import 'package:clean_flutter_movies/UI/pages/video_detail_page.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
