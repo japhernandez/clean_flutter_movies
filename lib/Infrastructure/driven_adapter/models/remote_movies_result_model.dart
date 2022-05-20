@@ -1,15 +1,15 @@
 import 'package:clean_flutter_movies/Domain/entities/movie_entity.dart';
 
-class MovieResults {
+class RemoteMovieResultsModel {
   int? page;
   List<RemoteMovieModel>? movies;
   int? totalPages;
   int? totalResults;
 
-  MovieResults({this.page, this.movies, this.totalPages, this.totalResults});
+  RemoteMovieResultsModel({this.page, this.movies, this.totalPages, this.totalResults});
 
-  factory MovieResults.fromJson(Map json) {
-    return MovieResults(
+  factory RemoteMovieResultsModel.fromJson(Map json) {
+    return RemoteMovieResultsModel(
         page: json['page'],
         movies: json['results'].map<RemoteMovieModel>((movieJson) =>
             RemoteMovieModel.fromJson(movieJson)).toList(),

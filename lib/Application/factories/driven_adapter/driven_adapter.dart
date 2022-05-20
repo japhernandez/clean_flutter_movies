@@ -1,0 +1,1 @@
+export 'get_movies_popular_factory.dart';
