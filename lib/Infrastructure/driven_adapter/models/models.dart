@@ -1,0 +1,1 @@
+export 'remote_movies_result_model.dart';
