@@ -1,16 +1,6 @@
 import 'package:equatable/equatable.dart';
 
-class MovieResultEntity extends Equatable {
-  final List<MovieEntity> movies;
-
-  const MovieResultEntity({required this.movies});
-
-  @override
-  List<Object?> get props => [movies];
-
-}
-
-class MovieEntity extends Equatable {
+class MoviesViewModel extends Equatable {
   bool? adult;
   String? backdropPath;
   List<int>? genreIds;
@@ -25,7 +15,16 @@ class MovieEntity extends Equatable {
   bool? video;
   int? voteCount;
 
-  MovieEntity({
+  get fullPosterImg {
+    if (posterPath != null) {
+      return 'https://image.tmdb.org/t/p/w500$posterPath';
+    }
+
+    return 'https://i.stack.imgur.com/GNhxO.png';
+  }
+
+
+  MoviesViewModel({
     this.adult,
     this.backdropPath,
     this.genreIds,

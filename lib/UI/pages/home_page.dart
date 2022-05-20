@@ -1,6 +1,7 @@
+import 'package:flutter/material.dart';
+import 'package:clean_flutter_movies/UI/widgets/widgets.dart';
 import 'package:clean_flutter_movies/UI/pages/json/home_json.dart';
 import 'package:clean_flutter_movies/UI/pages/video_detail_page.dart';
-import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -107,8 +108,8 @@ class _HomePageState extends State<HomePage> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (_) =>
-                               const VideoDetailPage(videoUrl: "assets/videos/video_1.mp4"),
+                            builder: (_) => const VideoDetailPage(
+                                videoUrl: "assets/videos/video_1.mp4"),
                           ),
                         );
                       },
@@ -191,8 +192,8 @@ class _HomePageState extends State<HomePage> {
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (_) =>
-                                    const VideoDetailPage(videoUrl: "assets/videos/video_1.mp4"),
+                                    builder: (_) => const VideoDetailPage(
+                                        videoUrl: "assets/videos/video_1.mp4"),
                                   ),
                                 );
                               },
@@ -216,52 +217,7 @@ class _HomePageState extends State<HomePage> {
                     const SizedBox(
                       height: 30,
                     ),
-                    const Padding(
-                      padding: EdgeInsets.only(left: 15, right: 15),
-                      child: Text(
-                        "Popular on Netflix",
-                        style: TextStyle(
-                            fontSize: 18,
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold),
-                      ),
-                    ),
-                    const SizedBox(
-                      height: 8,
-                    ),
-                    SingleChildScrollView(
-                      scrollDirection: Axis.horizontal,
-                      child: Padding(
-                        padding: const EdgeInsets.only(left: 10),
-                        child: Row(
-                          children: List.generate(popularList.length, (index) {
-                            return GestureDetector(
-                              onTap: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (_) =>
-                                    const VideoDetailPage(videoUrl: "assets/videos/video_1.mp4"),
-                                  ),
-                                );
-                              },
-                              child: Container(
-                                margin: const EdgeInsets.only(right: 8),
-                                width: 110,
-                                height: 160,
-                                decoration: BoxDecoration(
-                                  image: DecorationImage(
-                                    image: AssetImage(popularList[index]["img"]),
-                                    fit: BoxFit.cover,
-                                  ),
-                                  borderRadius: BorderRadius.circular(6),
-                                ),
-                              ),
-                            );
-                          }),
-                        ),
-                      ),
-                    ),
+                    const MoviesList(),
                     const SizedBox(
                       height: 30,
                     ),
@@ -289,8 +245,8 @@ class _HomePageState extends State<HomePage> {
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (_) =>
-                                    const VideoDetailPage(videoUrl: "assets/videos/video_1.mp4"),
+                                    builder: (_) => const VideoDetailPage(
+                                        videoUrl: "assets/videos/video_1.mp4"),
                                   ),
                                 );
                               },
@@ -300,7 +256,8 @@ class _HomePageState extends State<HomePage> {
                                 height: 160,
                                 decoration: BoxDecoration(
                                   image: DecorationImage(
-                                    image: AssetImage(trendingList[index]["img"]),
+                                    image:
+                                        AssetImage(trendingList[index]["img"]),
                                     fit: BoxFit.cover,
                                   ),
                                   borderRadius: BorderRadius.circular(6),
@@ -338,8 +295,8 @@ class _HomePageState extends State<HomePage> {
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (_) =>
-                                    const VideoDetailPage(videoUrl: "assets/videos/video_1.mp4"),
+                                    builder: (_) => const VideoDetailPage(
+                                        videoUrl: "assets/videos/video_1.mp4"),
                                   ),
                                 );
                               },
@@ -349,7 +306,8 @@ class _HomePageState extends State<HomePage> {
                                 height: 300,
                                 decoration: BoxDecoration(
                                   image: DecorationImage(
-                                    image: AssetImage(originalList[index]["img"]),
+                                    image:
+                                        AssetImage(originalList[index]["img"]),
                                     fit: BoxFit.cover,
                                   ),
                                   borderRadius: BorderRadius.circular(6),
@@ -387,8 +345,8 @@ class _HomePageState extends State<HomePage> {
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (_) =>
-                                    const VideoDetailPage(videoUrl: "assets/videos/video_1.mp4"),
+                                    builder: (_) => const VideoDetailPage(
+                                        videoUrl: "assets/videos/video_1.mp4"),
                                   ),
                                 );
                               },

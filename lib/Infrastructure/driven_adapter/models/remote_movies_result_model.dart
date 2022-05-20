@@ -2,26 +2,26 @@ import 'package:clean_flutter_movies/Domain/entities/movie_entity.dart';
 
 class RemoteMovieResultsModel {
   int? page;
-  List<RemoteMovieModel>? movies;
+  List<RemoteMovieModel> movies;
   int? totalPages;
   int? totalResults;
 
-  RemoteMovieResultsModel({this.page, this.movies, this.totalPages, this.totalResults});
+  RemoteMovieResultsModel(
+      {this.page, required this.movies, this.totalPages, this.totalResults});
 
   factory RemoteMovieResultsModel.fromJson(Map json) {
     return RemoteMovieResultsModel(
         page: json['page'],
-        movies: json['results'].map<RemoteMovieModel>((movieJson) =>
-            RemoteMovieModel.fromJson(movieJson)).toList(),
+        movies: json['results']
+            .map<RemoteMovieModel>(
+                (movieJson) => RemoteMovieModel.fromJson(movieJson))
+            .toList(),
         totalPages: json['total_pages'],
-        totalResults: json['total_results']
-    );
+        totalResults: json['total_results']);
   }
 
-  MovieResultEntity toEntity() =>
-      MovieResultEntity(
-          movies: movies!.map((movie) => movie.toEntity()).toList()
-      );
+  MovieResultEntity toEntity() => MovieResultEntity(
+      movies: movies.map((movie) => movie.toEntity()).toList());
 }
 
 class RemoteMovieModel {
@@ -37,10 +37,10 @@ class RemoteMovieModel {
   String? releaseDate;
   String? title;
   bool? video;
-  double? voteAverage;
   int? voteCount;
 
-  RemoteMovieModel({this.adult,
+  RemoteMovieModel({
+    this.adult,
     this.backdropPath,
     this.genreIds,
     this.id,
@@ -52,8 +52,16 @@ class RemoteMovieModel {
     this.releaseDate,
     this.title,
     this.video,
-    this.voteAverage,
-    this.voteCount,});
+    this.voteCount,
+  });
+
+  get fullPosterImg {
+    if (posterPath != null) {
+      return 'https://image.tmdb.org/t/p/w500$posterPath';
+    }
+
+    return 'https://i.stack.imgur.com/GNhxO.png';
+  }
 
   factory RemoteMovieModel.fromJson(Map json) {
     return RemoteMovieModel(
@@ -69,25 +77,23 @@ class RemoteMovieModel {
       releaseDate: json['release_date'],
       title: json['title'],
       video: json['video'],
-      voteAverage: json['vote_average'],
       voteCount: json['vote_count'],
     );
   }
 
   MovieEntity toEntity() => MovieEntity(
-    adult: adult,
-    backdropPath: backdropPath,
-    genreIds: genreIds,
-    id: id,
-    originalLanguage: originalLanguage,
-    originalTitle: originalTitle,
-    overview: overview,
-    popularity: popularity,
-    posterPath: posterPath,
-    releaseDate: releaseDate,
-    title: title,
-    video: video,
-    voteAverage: voteAverage,
-    voteCount: voteCount,
-  );
+        adult: adult,
+        backdropPath: backdropPath,
+        genreIds: genreIds,
+        id: id,
+        originalLanguage: originalLanguage,
+        originalTitle: originalTitle,
+        overview: overview,
+        popularity: popularity,
+        posterPath: posterPath,
+        releaseDate: releaseDate,
+        title: title,
+        video: video,
+        voteCount: voteCount,
+      );
 }
