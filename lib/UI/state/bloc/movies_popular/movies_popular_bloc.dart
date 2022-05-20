@@ -20,12 +20,10 @@ class MoviesPopularBloc extends Bloc<MoviesPopularEvent, MoviesPopularState> {
         originalLanguage: movie.originalLanguage,
         originalTitle: movie.originalTitle,
         overview: movie.overview,
-        popularity: movie.popularity,
         posterPath: movie.posterPath,
         releaseDate: movie.releaseDate,
         title: movie.title,
         video: movie.video,
-        voteCount: movie.voteCount,
       ));
       emit(MoviesPopularLoadedState(movies: movies.toList()));
     });

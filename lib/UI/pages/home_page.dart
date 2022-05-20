@@ -168,52 +168,7 @@ class _HomePageState extends State<HomePage> {
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const Padding(
-                      padding: EdgeInsets.only(left: 15, right: 15),
-                      child: Text(
-                        "My List",
-                        style: TextStyle(
-                            fontSize: 18,
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold),
-                      ),
-                    ),
-                    const SizedBox(
-                      height: 8,
-                    ),
-                    SingleChildScrollView(
-                      scrollDirection: Axis.horizontal,
-                      child: Padding(
-                        padding: const EdgeInsets.only(left: 10),
-                        child: Row(
-                          children: List.generate(mylist.length, (index) {
-                            return GestureDetector(
-                              onTap: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (_) => const VideoDetailPage(
-                                        videoUrl: "assets/videos/video_1.mp4"),
-                                  ),
-                                );
-                              },
-                              child: Container(
-                                margin: const EdgeInsets.only(right: 8),
-                                width: 110,
-                                height: 160,
-                                decoration: BoxDecoration(
-                                  image: DecorationImage(
-                                    image: AssetImage(mylist[index]["img"]),
-                                    fit: BoxFit.cover,
-                                  ),
-                                  borderRadius: BorderRadius.circular(6),
-                                ),
-                              ),
-                            );
-                          }),
-                        ),
-                      ),
-                    ),
+                    const MoviesToRatedList(),
                     const SizedBox(
                       height: 30,
                     ),

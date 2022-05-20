@@ -23,7 +23,6 @@ class MovieEntity extends Equatable {
   String? releaseDate;
   String? title;
   bool? video;
-  int? voteCount;
 
   MovieEntity({
     this.adult,
@@ -38,7 +37,6 @@ class MovieEntity extends Equatable {
     this.releaseDate,
     this.title,
     this.video,
-    this.voteCount,
   });
 
   @override
@@ -55,6 +53,5 @@ class MovieEntity extends Equatable {
     releaseDate,
     title,
     video,
-    voteCount,
   ];
 }

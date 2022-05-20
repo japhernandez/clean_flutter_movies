@@ -32,12 +32,10 @@ class RemoteMovieModel {
   String? originalLanguage;
   String? originalTitle;
   String? overview;
-  double? popularity;
   String? posterPath;
   String? releaseDate;
   String? title;
   bool? video;
-  int? voteCount;
 
   RemoteMovieModel({
     this.adult,
@@ -47,21 +45,11 @@ class RemoteMovieModel {
     this.originalLanguage,
     this.originalTitle,
     this.overview,
-    this.popularity,
     this.posterPath,
     this.releaseDate,
     this.title,
     this.video,
-    this.voteCount,
   });
-
-  get fullPosterImg {
-    if (posterPath != null) {
-      return 'https://image.tmdb.org/t/p/w500$posterPath';
-    }
-
-    return 'https://i.stack.imgur.com/GNhxO.png';
-  }
 
   factory RemoteMovieModel.fromJson(Map json) {
     return RemoteMovieModel(
@@ -72,12 +60,10 @@ class RemoteMovieModel {
       originalLanguage: json['original_language'],
       originalTitle: json['original_title'],
       overview: json['overview'],
-      popularity: json['popularity'],
       posterPath: json['poster_path'],
       releaseDate: json['release_date'],
       title: json['title'],
       video: json['video'],
-      voteCount: json['vote_count'],
     );
   }
 
@@ -89,11 +75,9 @@ class RemoteMovieModel {
         originalLanguage: originalLanguage,
         originalTitle: originalTitle,
         overview: overview,
-        popularity: popularity,
         posterPath: posterPath,
         releaseDate: releaseDate,
         title: title,
         video: video,
-        voteCount: voteCount,
       );
 }

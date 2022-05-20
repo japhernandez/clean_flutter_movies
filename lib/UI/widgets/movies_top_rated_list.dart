@@ -1,26 +1,26 @@
-import 'package:clean_flutter_movies/UI/pages/video_detail_page.dart';
-import 'package:clean_flutter_movies/UI/state/bloc/movies_popular/movies_popular_bloc.dart';
+import 'package:clean_flutter_movies/Infrastructure/driven_adapter/driven_adapter.dart';
+import 'package:clean_flutter_movies/UI/state/state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../Infrastructure/driven_adapter/driven_adapter.dart';
+import '../pages/video_detail_page.dart';
 
-class MoviesList extends StatelessWidget {
-  const MoviesList({Key? key}) : super(key: key);
+class MoviesToRatedList extends StatelessWidget {
+  const MoviesToRatedList({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => MoviesPopularBloc(
-          RepositoryProvider.of<GetMoviesPopularRepositoryAdapter>(context))
-        ..add(RemoteLoadMoviesPopularEvent()),
+      create: (context) => MoviesToRaredBloc(
+          RepositoryProvider.of<GetMoviesToRatedRepositoryAdapter>(context))
+        ..add(RemoteLoadMoviesToRatedEvent()),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           const Padding(
             padding: EdgeInsets.only(left: 15, right: 15),
             child: Text(
-              "Popular Movies",
+              "Top Rated Movies",
               style: TextStyle(
                   fontSize: 18,
                   color: Colors.white,
@@ -30,15 +30,15 @@ class MoviesList extends StatelessWidget {
           const SizedBox(
             height: 8,
           ),
-          BlocBuilder<MoviesPopularBloc, MoviesPopularState>(
+          BlocBuilder<MoviesToRaredBloc, MoviesToRatedState>(
             builder: (context, state) {
-              if (state is MoviesPopularLoadingState) {
+              if (state is MoviesToRatedLoadingState) {
                 return const Center(
                   child: CircularProgressIndicator(),
                 );
               }
 
-              if (state is MoviesPopularLoadedState) {
+              if (state is MoviesToRatedLoadedState) {
                 return Padding(
                   padding: const EdgeInsets.only(left: 10),
                   child: SizedBox(

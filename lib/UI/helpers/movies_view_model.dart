@@ -8,12 +8,10 @@ class MoviesViewModel extends Equatable {
   String? originalLanguage;
   String? originalTitle;
   String? overview;
-  double? popularity;
   String? posterPath;
   String? releaseDate;
   String? title;
   bool? video;
-  int? voteCount;
 
   get fullPosterImg {
     if (posterPath != null) {
@@ -32,12 +30,10 @@ class MoviesViewModel extends Equatable {
     this.originalLanguage,
     this.originalTitle,
     this.overview,
-    this.popularity,
     this.posterPath,
     this.releaseDate,
     this.title,
     this.video,
-    this.voteCount,
   });
 
   @override
@@ -49,11 +45,9 @@ class MoviesViewModel extends Equatable {
     originalLanguage,
     originalTitle,
     overview,
-    popularity,
     posterPath,
     releaseDate,
     title,
     video,
-    voteCount,
   ];
 }
