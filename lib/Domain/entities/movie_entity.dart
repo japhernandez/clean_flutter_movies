@@ -1,5 +1,15 @@
 import 'package:equatable/equatable.dart';
 
+class MovieResultEntity extends Equatable {
+  final List<MovieEntity> movies;
+
+  const MovieResultEntity({required this.movies});
+
+  @override
+  List<Object?> get props => [movies];
+
+}
+
 class MovieEntity extends Equatable {
   bool? adult;
   String? backdropPath;
