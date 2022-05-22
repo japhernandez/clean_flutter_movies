@@ -1,3 +1,4 @@
+import 'package:clean_flutter_movies/UI/pages/search_page.dart';
 import 'package:flutter/material.dart';
 import 'package:clean_flutter_movies/UI/widgets/widgets.dart';
 import 'package:clean_flutter_movies/UI/pages/json/home_json.dart';
@@ -16,6 +17,19 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       backgroundColor: Colors.black,
+      appBar: AppBar(
+        title: const Text("Movies CSS"),
+        elevation: 0,
+        backgroundColor: Colors.black,
+        actions: [
+          IconButton(
+            onPressed: () {
+              showSearch(context: context, delegate: MovieSearchDelegate());
+            },
+            icon: const Icon(Icons.search_outlined),
+          )
+        ],
+      ),
       body: getBody(),
     );
   }

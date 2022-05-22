@@ -5,6 +5,6 @@ import 'package:clean_flutter_movies/env.dart';
 
 GetMoviesToRatedRepositoryAdapter makeGetMoviesToRateFactory() =>
     GetMoviesToRatedRepositoryAdapter(
-      url: makeApiUrl('movie/top_rated', keyMovies),
+      url: makeApiUrl('movie/top_rated', keyMovies, ""),
       httpClientRepository: makeHttpAdapterFactory(),
     );

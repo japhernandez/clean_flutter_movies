@@ -65,7 +65,6 @@ class _RootAppState extends State<RootApp> {
       children: const [
         HomePage(),
         ComingSoonPage(),
-        SearchPage(),
         DownloadPage()
       ],
     );

@@ -15,7 +15,8 @@ class MyApp extends StatelessWidget {
     return MultiRepositoryProvider(
       providers: [
         RepositoryProvider(create: (context) => makeGetMoviesPopularFactory()),
-        RepositoryProvider(create: (context) => makeGetMoviesToRateFactory())
+        RepositoryProvider(create: (context) => makeGetMoviesToRateFactory()),
+        RepositoryProvider(create: (context) => makeGetMoviesSearchFactory())
       ],
       child: const MaterialApp(
         debugShowCheckedModeBanner: false,

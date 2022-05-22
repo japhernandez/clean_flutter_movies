@@ -1,1 +1,2 @@
-String makeApiUrl(path, key) => 'https://api.themoviedb.org/3/$path?api_key=$key';
+String makeApiUrl(path, key, query) =>
+    'https://api.themoviedb.org/3/$path?api_key=$key&query=$query';
