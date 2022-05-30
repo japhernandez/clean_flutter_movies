@@ -1,9 +1,8 @@
 import 'package:clean_flutter_movies/Infrastructure/driven_adapter/driven_adapter.dart';
+import 'package:clean_flutter_movies/UI/screens/screens.dart';
 import 'package:clean_flutter_movies/UI/state/state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
-import '../pages/video_detail_page.dart';
 
 class MoviesToRatedList extends StatelessWidget {
   const MoviesToRatedList({Key? key}) : super(key: key);
@@ -53,8 +52,7 @@ class MoviesToRatedList extends StatelessWidget {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (_) => const VideoDetailPage(
-                                    videoUrl: "assets/videos/video_1.mp4"),
+                                builder: (_) => MovieDetail(movie: movie),
                               ),
                             );
                           },
@@ -62,12 +60,16 @@ class MoviesToRatedList extends StatelessWidget {
                             margin: const EdgeInsets.only(right: 8),
                             width: 110,
                             height: 160,
-                            child: ClipRRect(
-                              borderRadius: BorderRadius.circular(10),
-                              child: FadeInImage(
-                                placeholder: const NetworkImage('https://i.stack.imgur.com/GNhxO.png'),
-                                image: NetworkImage(movie.fullPosterImg),
-                                fit: BoxFit.cover,
+                            child: Hero(
+                              tag: movie.id!,
+                              child: ClipRRect(
+                                borderRadius: BorderRadius.circular(10),
+                                child: FadeInImage(
+                                  placeholder: const NetworkImage(
+                                      'https://i.stack.imgur.com/GNhxO.png'),
+                                  image: NetworkImage(movie.fullPosterImg),
+                                  fit: BoxFit.cover,
+                                ),
                               ),
                             ),
                           ),

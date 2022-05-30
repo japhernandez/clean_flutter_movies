@@ -21,7 +21,6 @@ class MoviesViewModel extends Equatable {
     return 'https://i.stack.imgur.com/GNhxO.png';
   }
 
-
   MoviesViewModel({
     this.adult,
     this.backdropPath,
@@ -38,16 +37,16 @@ class MoviesViewModel extends Equatable {
 
   @override
   List<Object?> get props => [
-    adult,
-    backdropPath,
-    genreIds,
-    id,
-    originalLanguage,
-    originalTitle,
-    overview,
-    posterPath,
-    releaseDate,
-    title,
-    video,
-  ];
+        adult,
+        backdropPath,
+        genreIds,
+        id,
+        originalLanguage,
+        originalTitle,
+        overview,
+        posterPath,
+        releaseDate,
+        title,
+        video,
+      ];
 }

@@ -1,9 +1,9 @@
+import 'package:clean_flutter_movies/Infrastructure/driven_adapter/driven_adapter.dart';
+import 'package:clean_flutter_movies/Infrastructure/entry_points/entry_points.dart';
 import 'package:clean_flutter_movies/env.dart';
-import 'package:clean_flutter_movies/Application/config/config.dart';
-import 'package:clean_flutter_movies/Application/factories/factories.dart';
-import 'package:clean_flutter_movies/Infrastructure/driven_adapter/get_movies_popular_repository_adapter.dart';
 
-GetMoviesPopularRepositoryAdapter makeGetMoviesPopularFactory() => GetMoviesPopularRepositoryAdapter(
-    url: makeApiUrl('movie/popular', keyMovies, ""),
-    httpClientRepository: makeHttpAdapterFactory()
-);
+GetMoviesPopularRepositoryAdapter makeGetMoviesPopularFactory() {
+  return GetMoviesPopularRepositoryAdapter(
+      url: makeApiUrl('movie/popular', keyMovies, ""),
+      httpClientRepository: makeHttpAdapterFactory());
+}

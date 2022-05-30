@@ -1,9 +1,8 @@
-import 'package:clean_flutter_movies/UI/pages/video_detail_page.dart';
-import 'package:clean_flutter_movies/UI/state/bloc/movies_popular/movies_popular_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
-import '../../Infrastructure/driven_adapter/driven_adapter.dart';
+import 'package:clean_flutter_movies/UI/pages/video_detail_page.dart';
+import 'package:clean_flutter_movies/Infrastructure/driven_adapter/driven_adapter.dart';
+import 'package:clean_flutter_movies/UI/state/bloc/movies_popular/movies_popular_bloc.dart';
 
 class MoviesList extends StatelessWidget {
   const MoviesList({Key? key}) : super(key: key);
@@ -65,7 +64,8 @@ class MoviesList extends StatelessWidget {
                             child: ClipRRect(
                               borderRadius: BorderRadius.circular(10),
                               child: FadeInImage(
-                                placeholder: const NetworkImage('https://i.stack.imgur.com/GNhxO.png'),
+                                placeholder: const NetworkImage(
+                                    'https://i.stack.imgur.com/GNhxO.png'),
                                 image: NetworkImage(movie.fullPosterImg),
                                 fit: BoxFit.cover,
                               ),

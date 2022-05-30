@@ -9,4 +9,11 @@ abstract class MoviesSearchEvent extends Equatable {
 
 class LoadMoviesSearchEvent extends MoviesSearchEvent {}
 
-class RemoteLoadMoviesSearchEvent extends MoviesSearchEvent {}
+class RemoteLoadMoviesSearchEvent extends MoviesSearchEvent {
+  final String query;
+
+  const RemoteLoadMoviesSearchEvent({required this.query});
+
+  @override
+  List<Object> get props => [query];
+}

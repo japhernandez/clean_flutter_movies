@@ -7,24 +7,25 @@ part 'movies_popular_event.dart';
 part 'movies_popular_state.dart';
 
 class MoviesPopularBloc extends Bloc<MoviesPopularEvent, MoviesPopularState> {
-  final GetMoviesPopularRepositoryAdapter getMoviesPopularRepositoryAdapter;
+  final BaseRepositoryAdapter _baseRepositoryAdapter;
 
-  MoviesPopularBloc(this.getMoviesPopularRepositoryAdapter) : super(MoviesPopularLoadingState()) {
+  MoviesPopularBloc(this._baseRepositoryAdapter)
+      : super(MoviesPopularLoadingState()) {
     on<RemoteLoadMoviesPopularEvent>((event, emit) async {
-      final response = await getMoviesPopularRepositoryAdapter.getMoviesPopular();
+      final response = await _baseRepositoryAdapter.getMovies();
       final movies = response.movies.map((movie) => MoviesViewModel(
-        adult: movie.adult,
-        backdropPath: movie.backdropPath,
-        genreIds: movie.genreIds,
-        id: movie.id,
-        originalLanguage: movie.originalLanguage,
-        originalTitle: movie.originalTitle,
-        overview: movie.overview,
-        posterPath: movie.posterPath,
-        releaseDate: movie.releaseDate,
-        title: movie.title,
-        video: movie.video,
-      ));
+            adult: movie.adult,
+            backdropPath: movie.backdropPath,
+            genreIds: movie.genreIds,
+            id: movie.id,
+            originalLanguage: movie.originalLanguage,
+            originalTitle: movie.originalTitle,
+            overview: movie.overview,
+            posterPath: movie.posterPath,
+            releaseDate: movie.releaseDate,
+            title: movie.title,
+            video: movie.video,
+          ));
       emit(MoviesPopularLoadedState(movies: movies.toList()));
     });
   }

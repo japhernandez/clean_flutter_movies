@@ -80,7 +80,7 @@ class _VideoDetailPageState extends State<VideoDetailPage> {
       child: Column(
         children: [
           SizedBox(
-            height: 220,
+            height: 210,
             child: Stack(
               children: [
                 AspectRatio(

@@ -1,13 +1,13 @@
 import 'dart:convert';
-import 'package:clean_flutter_movies/Infrastructure/shared/shared.dart';
 import 'package:http/http.dart';
 
-import 'package:clean_flutter_movies/Infrastructure/driven_adapter/contracts/http_client_repository.dart';
+import 'package:clean_flutter_movies/Infrastructure/shared/shared.dart';
+import 'package:clean_flutter_movies/Domain/use_cases/contracts/http_client_repository.dart';
 
-class HttpAdapter implements HttpClientRepository {
+class HttpService implements HttpClientRepository {
   final Client client;
 
-  HttpAdapter(this.client);
+  HttpService(this.client);
 
   @override
   Future request({
@@ -16,7 +16,6 @@ class HttpAdapter implements HttpClientRepository {
     Map? body,
     Map? headers,
   }) async {
-
     final jsonBody = body != null ? jsonEncode(body) : null;
     var response = Response('', 500);
 
@@ -32,7 +31,6 @@ class HttpAdapter implements HttpClientRepository {
           break;
         default:
       }
-
       response = await futureResponse!.timeout(const Duration(seconds: 10));
     } catch (error) {
       throw HttpError.serverError;

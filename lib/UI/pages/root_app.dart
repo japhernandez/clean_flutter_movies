@@ -1,7 +1,6 @@
 import 'package:clean_flutter_movies/UI/pages/coming_soon_page.dart';
 import 'package:clean_flutter_movies/UI/pages/download_page.dart';
 import 'package:clean_flutter_movies/UI/pages/home_page.dart';
-import 'package:clean_flutter_movies/UI/pages/search_page.dart';
 import 'package:flutter/material.dart';
 
 import 'json/root_app_json.dart';
@@ -65,7 +64,7 @@ class _RootAppState extends State<RootApp> {
       children: const [
         HomePage(),
         ComingSoonPage(),
-        DownloadPage()
+        DownloadPage(),
       ],
     );
   }

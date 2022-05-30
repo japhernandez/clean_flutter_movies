@@ -16,7 +16,8 @@ class MyApp extends StatelessWidget {
       providers: [
         RepositoryProvider(create: (context) => makeGetMoviesPopularFactory()),
         RepositoryProvider(create: (context) => makeGetMoviesToRateFactory()),
-        RepositoryProvider(create: (context) => makeGetMoviesSearchFactory())
+        RepositoryProvider(create: (context) => makeGetMoviesSearchFactory()),
+        RepositoryProvider(create: (context) => makeGetMoviesCastFactory())
       ],
       child: const MaterialApp(
         debugShowCheckedModeBanner: false,
